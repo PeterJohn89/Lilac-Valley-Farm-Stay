@@ -126,7 +126,7 @@ img{
     margin: auto;
     width: 100%;
     position: relative;
-    padding: 15px;
+    padding: 20px;
 }
 /* Button Styles */
 .button {
@@ -229,7 +229,7 @@ header {
 }
 
 #logo img{
-    max-width: 120px;
+    max-width: 100px;
 }
 
 nav{
@@ -328,21 +328,20 @@ nav .nav-item{
     margin-top: 20px;
 }
 
-email-subscribe input[type="email"] {
-    width: 400px;
-    padding: 20px;
+.email-subscribe input[type="email"] {
+    max-width: 400px;
+    border-radius: 6px 0px 0px 6px;
     border: 0px;
-    font-size: 16px;
 }
 
-email-subscribe button {
+.email-subscribe button {
     background-color: var(--color-secondary); /* Set the background color for the subscribe button */
     color: #fff;
     margin: 0;
     border-radius: 0px 6px 6px 0px;
 }
 
-email-subscribe button:hover {
+.email-subscribe button:hover {
     background-color: #005bab; /* Change the background color on hover */
 }
 
@@ -435,13 +434,13 @@ textarea {
 }
 
 /* Responsive media */
-@media (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
     .full_width_container {
         padding: 50px; 
     }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     /* Adjust the font size for h1 h2 h3 and p on screens up to 768px width */
     h1 {
         font-size: 36px; 
@@ -463,12 +462,15 @@ textarea {
         line-height: 1.5;
         margin-bottom: 15px; 
     }
+    .nav-item .button{
+        display: none;
+    }
 
     /* The menu changes for mobile */
     .main_menu {
         display: none; /* Initially hide the main menu */
         position: fixed;
-        top: 50px;
+        top: 129px;
         padding: 0;
         text-align: center;
         left: 0;
@@ -511,10 +513,11 @@ textarea {
     }
 }
 
-@media (max-width: 360px) {
+@media screen and (max-width: 360px) {
     /* Adjust the font size for h1 h2 h3 and p on screens up to 360px width */
     h1 {
         font-size: 24px; 
+        text-align: center;
         line-height: 33px; 
     }
 
@@ -528,10 +531,26 @@ textarea {
         line-height: 1.6; 
     }
 
+    h1, h2, h3, h4, h5, p{
+        text-align: center;
+    }
+    
+    .brief_description{
+        margin-bottom: 0;
+    }
+
     p {
         font-size: 14px; 
         line-height: 1.5; 
         margin-bottom: 10px; 
+    }
+
+    section{
+        margin: 0px;
+    }
+    
+    .full_width_container{
+        padding: 0;
     }
 
 }

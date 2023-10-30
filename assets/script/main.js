@@ -1,11 +1,8 @@
 // Mobile menu
 $('.mobile_menu').click(function() {
-    $('.mobile_menu .fa-bars').toggle(); // Toggle to hide and show the mobile hamburger icon
-    $('.mobile_menu .fa-xmark').toggle();// Toggle to hide and show the x
-    // iff the menu is displayed none the change main menu to display none
-    if ($('#menu').css('display') === 'none') { 
-        $('.main_menu').css('display', 'none'); // Hide main menu on mobile menu click
-    }
+    $('.mobile_menu .fa-bars').toggle(); 
+    $('.mobile_menu .fa-xmark').toggle();
+    $('.main_menu').toggle();
 });
 
 // When the window is resized, check if it's beyond a certain breakpoint, and if so, show the main menu.
@@ -17,6 +14,8 @@ $(window).resize(function() {
         $('.main_menu').css('display', 'block');
     } else {
         $('.main_menu').css('display', 'none');
+        $('.mobile_menu .fa-bars').css('display', 'block');
+        $('.mobile_menu .fa-xmark').css('display', 'none');
     }
 });
 
