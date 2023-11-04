@@ -5,25 +5,6 @@ $('#mobileMenu').click(function() {
     $('.header__navigation').fadeToggle(100);
 });
 
-// When the window is resized, check if it's beyond a certain breakpoint, and if so, show the main menu.
-$(window).on("resize", function() {
-    var windowWidth = $(window).width(); // Get window width
-    var breakpoint = 768; // Define your desired breakpoint here
-    //If window width is less then 768 breadkpoint then show main menu otherwise hide it
-    
-    console.log(windowWidth > breakpoint);
-
-    if (windowWidth > breakpoint) {
-        $('#mobileMenu').css('display', 'none');
-        $('#header').removeClass("on_mobile"); 
-    } else {
-        $('#mobileMenu').css('display', 'block');
-        $('#mobileMenu .fa-bars').css('display', 'block');
-        $('#mobileMenu .fa-xmark').css('display', 'none');
-        $('#header').addClass("on_mobile"); 
-    }
-});
-
 // Slick carousel
 $('#carousel').slick({
     dots: true, // add dots

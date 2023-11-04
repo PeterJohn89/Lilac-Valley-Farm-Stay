@@ -351,7 +351,6 @@ header {
     color: #fff;
 }
 
-
 .full_width_container {
     background-position: center; /* Make background image centered */
     background-size: cover; /* Make background image cover the entire container */
@@ -363,21 +362,15 @@ header {
     padding: 10em 0px;
 }
 
-
-
 /* Featured tiles */
 .featured_content_tile {
     padding: 20px; /* Define padding for featured content tiles */
 }
 
-
-
-
 /* Carousel */
 .carousel_item{
-    padding: 20px; /* Set padding for carousel items */
+    padding: 10px; /* Set padding for carousel items */
 }
-
 
 /* Email subscribe */
 .subscribe{
@@ -411,18 +404,6 @@ header {
     margin-bottom: 30px; /* Add margin at the bottom of form groups */
 }
 
-.form__label{
-
-}
-
-.form__input{
-
-}
-
-.form__textarea{
-
-}
-
 /* Footer */
 .footer {
     background-color: var(--color-font); /* Set the background color for the site footer */
@@ -449,6 +430,7 @@ header {
     display: -ms-flexbox; /* Used for edge browsers */
     display: flex; /* Use flexbox for grid layout */
 }
+
 
 .footer a {
     text-decoration: none;
@@ -525,7 +507,7 @@ header {
 
     .coln-6, .coln-4 {
         width: 100%;
-        padding: 10px; /* Adjust padding for columns on smaller screens */
+        padding: 0px; /* Adjust padding for columns on smaller screens */
     }
 
     .header__primary-logo{
@@ -535,12 +517,14 @@ header {
     .header__content{
         padding: 0px 20px;
     }
-
+    .hero_banner{
+        height: 400px;
+    }
     /* The menu changes for mobile */
     .header__navigation {
         display: none; /* Initially hide the main menu */
         position: fixed;
-        top: 74px;
+        top: 94px;
         padding: 0;
         left: 0;
         width: 100%;
@@ -574,7 +558,19 @@ header {
     }
 
     .full_width_container {
-        padding: 2em; /* Adjust padding for the full-width container on screens up to 768px width */
+        padding: 0px; /* Adjust padding for the full-width container on screens up to 768px width */
+    }
+    
+    .content_overlay{
+        max-width: 100%;
+    }
+
+    .full_width_container__content{
+        padding: 0px;
+    }
+
+    section{
+        margin: 20px 0px;
     }
 
 }
@@ -611,12 +607,12 @@ header {
         margin-bottom: 10px; 
     }
 
+    .hero_banner{
+        height: 300px;
+    }
+
     section{
         margin: 0px;
-    }
-    
-    .full_width_container{
-        padding: 0;
     }
 
 }
