@@ -1,21 +1,26 @@
-// Mobile menu
-$('.mobile_menu').click(function() {
-    $('.mobile_menu .fa-bars').toggle(); 
-    $('.mobile_menu .fa-xmark').toggle();
-    $('.main_menu').toggle();
+// Mobile menu show and hide the menu bar and x also toggle the main menu
+$('#mobileMenu').click(function() {
+    $('#mobileMenu .fa-bars').toggle(); 
+    $('#mobileMenu .fa-xmark').toggle();
+    $('.header__navigation').fadeToggle(100);
 });
 
 // When the window is resized, check if it's beyond a certain breakpoint, and if so, show the main menu.
-$(window).resize(function() {
+$(window).on("resize", function() {
     var windowWidth = $(window).width(); // Get window width
     var breakpoint = 768; // Define your desired breakpoint here
     //If window width is less then 768 breadkpoint then show main menu otherwise hide it
+    
+    console.log(windowWidth > breakpoint);
+
     if (windowWidth > breakpoint) {
-        $('.main_menu').css('display', 'block');
+        $('#mobileMenu').css('display', 'none');
+        $('#header').removeClass("on_mobile"); 
     } else {
-        $('.main_menu').css('display', 'none');
-        $('.mobile_menu .fa-bars').css('display', 'block');
-        $('.mobile_menu .fa-xmark').css('display', 'none');
+        $('#mobileMenu').css('display', 'block');
+        $('#mobileMenu .fa-bars').css('display', 'block');
+        $('#mobileMenu .fa-xmark').css('display', 'none');
+        $('#header').addClass("on_mobile"); 
     }
 });
 
@@ -37,32 +42,41 @@ $('#carousel').slick({
     ]
 });
 
-// Slick full width slider
-$('#full_width_slider').slick({
-    dots: true, // Add dots for navigation
-    arrows: false, // Hide arrow navigation
-    infinite: true, // Allow infinite scrolling
-    speed: 300, // Set slide transition speed
-    slidesToShow: 1, // Display one slide at a time
-    adaptiveHeight: true, // Adjust slide height based on content
-    autoplay: true, // Enable automatic slide autoplay
-    autoplaySpeed: 5000, // Set autoplay speed in milliseconds
+
+// Slick carousel
+$('#slider').slick({
+    dots: true, // add dots
+    arrows: false, // remove arrows
+    slidesToShow: 1, //Show 2 slides 
+    slidesToScroll: 1,// slide only two in a row
 });
 
 // Scroll up to top
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-// Show or hide the scroll-up button based on scroll position
-window.onscroll = function () {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = "block"; // Display the scroll-up button
-    } else {
-        scrollToTopBtn.style.display = "none"; // Hide the scroll-up button
-    }
-};
-
-// Scroll to the top when the button is clicked
-scrollToTopBtn.addEventListener("click", function () {
+$("#scrollToTopBtn").on("click", function(){
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+});
+
+
+$(window).on("scroll", function(){
+    // Show or hide the scroll-up button based on scroll position
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        $("#scrollToTopBtn").css("display", "block");
+    } else {
+        $("#scrollToTopBtn").css("display", "none");
+    }
+});
+
+
+    
+
+$(window).on("scroll", function(){
+    const windowWidth = $(window).width(); // Get window width
+    const breakpoint = 768; // Define your desired breakpoint here
+    //If window width is less then 768 breadkpoint then show main menu otherwise hide it
+    if (windowWidth < breakpoint && (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70)) {
+        $('#header').addClass("on_mobile");
+    } else {
+        $('#header').removeClass("on_mobile"); 
+    } 
 });

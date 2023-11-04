@@ -110,14 +110,41 @@ p {
     margin-bottom: 20px;
 }
 
-.quotes{
-    font-style: italic;
-    font-size: 16px;
-    line-height: 1.6; 
-}
-
 img{
     width: 100%;
+}
+
+section {
+    position: relative; /* Set relative positioning for sections */
+    margin: 5em 0; 
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Change border color on focus (optional) */
 }
 
 /* Global styling for classes that can be used throughout the website. */
@@ -128,11 +155,11 @@ img{
     position: relative;
     padding: 20px;
 }
+
 /* Button Styles */
 .button {
     display: inline-block;
     vertical-align: middle;
-    margin: 1em 0;
     padding: 15px 30px;
     border-radius: 6px;
     border: 1px solid transparent;
@@ -142,6 +169,7 @@ img{
     text-align: center;
     cursor: pointer;
     text-decoration: none;
+    font-size: 16px;
 }
 
 .button i {
@@ -166,7 +194,8 @@ img{
 }
 
 .button.primary.hallow:hover {
-    background-color: rgb(51, 216, 142); 
+    background-color: var(--color-primary); /* Use a variable for background color */
+    color: #fff;
 }
 
 .button.secondary {
@@ -182,9 +211,16 @@ img{
     margin-bottom: 30px; 
 }
 
-section {
-    position: relative; /* Set relative positioning for sections */
-    margin: 5em 0; 
+.quotes{
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.6; 
+}
+
+.quotes__link{
+    color: var(--color-secondary);
+    display: block;
+    margin: 10px 0px;
 }
 
 .grid {
@@ -200,7 +236,7 @@ section {
 }
 
 .row > * {
-    padding: 20px; 
+    padding: 10px; 
 }
 
 .coln-6 {
@@ -217,22 +253,37 @@ section {
     width: 33.33333333%; /* Define column width for coln-4 */
 }
 
+.on_mobile{
+    position: fixed;
+    top: 0;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.28);
+    z-index: 1111;
+}
+
+.content_overlay {
+    background-color: rgba(51, 51, 51, 0.61); /* Use rgba for transparency */
+    padding: 20px;
+    width: 100%;
+    max-width: 80%;
+    color: #fff;
+    border-radius: 6px; /* Add border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.content_overlay:hover {
+    background-color: rgba(51, 51, 51, 0.8); /* Darker overlay on hover */
+}
+
 /* Header */
 header {
+    background-color: #fff;
+    width: 100%;
     margin: 0; 
     padding: 0; 
 }
 
-#logo{
-    font-size: 28px;
-    font-family: 'Lora', serif;
-}
-
-#logo img{
-    max-width: 100px;
-}
-
-nav{
+.header__content{
     display: -webkit-box; /* Used for safari browsers */
     display: -ms-flexbox; /* Used for edge browsers */
     display: flex;
@@ -244,171 +295,173 @@ nav{
         -ms-flex-align: center; /* Used for edge browsers */
             align-items: center; /*    The 'align-items: center;' property centers the flex items along the cross-axis within their container */
 }
-nav .nav-item{
-    display: -webkit-box; /* Used for safari browsers */
-    display: -ms-flexbox; /* Used for edge browsers */
-    display: flex;
-    -webkit-box-align: center; /* Used for safari browsers */
-    -ms-flex-align: center; /* Used for edge browsers */
-        align-items: center; /*    The 'align-items: center;' property centers the flex items along the cross-axis within their container */
-}
-/* Main menu */
-.main_menu {
-    list-style: none; /* Remove default list styling */
-    display: block; /* Display menu items in a block layout */
+
+.header__primary-logo{
+    max-width: 100px;
 }
 
-.main_menu li {
+/* Main menu */
+.header__navigation ul{
+    list-style: none; /* Remove default list styling */
+    display: block; 
+    margin: 0px;
+    padding: 0px;
+}
+
+.header__navigation ul li {
     display: inline; /* Display menu items in a horizontal line */
     margin-right: 20px; 
 }
 
-.main_menu li a {
+.header__navigation ul li a {
     text-decoration: none; /* Remove underlines from menu links */
     color: var(--color-font); 
 }
 
-.mobile_menu {
+/* Main menu for mobile */
+.header__mobile-menu {
     display: none; /* Initially hide the mobile menu */
-    cursor: pointer; /* Change the cursor to a pointer on hover */
 }
 
-.mobile_menu .fa-bars{
+.header__mobile-menu a {
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    text-decoration: none; /* Stop the underline of a link */
+}
+
+.header__mobile-menu a .fa-bars{
     color: #333; 
     font-size: 28px; 
 }
 
-.mobile_menu .fa-xmark{
+.header__mobile-menu a .fa-xmark{
     display: none; /* Initially hide the close icon */
     color: #333; 
     font-size: 28px;
 }
+
+.hero_banner{
+    background-position: center; /* Make background image centered */
+    background-size: cover; /* Make background image cover the entire container */
+    background-repeat: no-repeat; /* Ensure that if the background image spreads, there is no repeating */
+    margin: 0;
+    height: 800px;
+    display: -webkit-box; /* Used for safari browsers */
+    display: -ms-flexbox; /* Used for edge browsers */
+    display: flex; /* Use flexbox for grid layout */
+    color: #fff;
+}
+
 
 .full_width_container {
     background-position: center; /* Make background image centered */
     background-size: cover; /* Make background image cover the entire container */
     background-repeat: no-repeat; /* Ensure that if the background image spread there is no repeating */
     margin: 0;
-    padding: 15em; 
 }
 
-.full_width_container--content {
-    margin: 0 10em 0 0; 
-    color: #fff; 
+.full_width_container__content {
+    padding: 10em 0px;
 }
 
-.content_overlay {
-    background-color: #3333339d; /* Define the background color for the content overlay */
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-}
 
-.featured_tile .row{
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
 
+/* Featured tiles */
 .featured_content_tile {
-    text-align: center;
-    padding: 10px 25px; /* Define padding for featured content tiles */
+    padding: 20px; /* Define padding for featured content tiles */
 }
+
+
+
 
 /* Carousel */
 .carousel_item{
     padding: 20px; /* Set padding for carousel items */
 }
 
+
 /* Email subscribe */
-.email-subscribe {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 20px;
+.subscribe{
+    margin-bottom: 0px;
 }
 
-.email-subscribe input[type="email"] {
-    max-width: 400px;
+.subscribe__email-subscribe{
+    display: -webkit-box; /* Used for safari browsers */
+    display: -ms-flexbox; /* Used for edge browsers */
+    display: flex; /* Use flexbox for grid layout */
+}
+
+.subscribe__email-subscribe .subscribe__input{
     border-radius: 6px 0px 0px 6px;
-    border: 0px;
 }
 
-.email-subscribe button {
-    background-color: var(--color-secondary); /* Set the background color for the subscribe button */
-    color: #fff;
-    margin: 0;
+.subscribe__email-subscribe .subscribe__button {
     border-radius: 0px 6px 6px 0px;
+    margin: 0px;
+    display: -webkit-box; /* Used for safari browsers */
+    display: -ms-flexbox; /* Used for edge browsers */
+    display: flex; /* Use flexbox for grid layout */
 }
 
-.email-subscribe button:hover {
-    background-color: #005bab; /* Change the background color on hover */
+/* form */
+.form{
+    padding: 25px 0px;
 }
 
-/* Contact form */
-.form-group {
-    margin-bottom: 20px; /* Add margin at the bottom of form groups */
+.form__input-group {
+    margin-bottom: 30px; /* Add margin at the bottom of form groups */
 }
 
-label {
-    display: block;
-    font-weight: bold;
+.form__label{
+
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.form__input{
+
 }
 
-textarea {
-    resize: vertical; /* Enable vertical resizing for textareas */
+.form__textarea{
+
 }
 
 /* Footer */
-.site-footer {
+.footer {
     background-color: var(--color-font); /* Set the background color for the site footer */
     color: #fff; /* Set text color in the footer */
     padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
 }
 
-.footer-menu ul {
+.footer ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer li{
+    padding: 10px;
     list-style: none;
-    padding: 0;
 }
 
-.footer-menu li {
-    display: inline;
-    margin-right: 20px;
+.footer__social-media{
+    margin-bottom: 10px;
 }
 
-.footer-menu a {
+.footer__social-media ul{
+    display: -webkit-box; /* Used for safari browsers */
+    display: -ms-flexbox; /* Used for edge browsers */
+    display: flex; /* Use flexbox for grid layout */
+}
+
+.footer a {
     text-decoration: none;
     color: #fff; /* Set link color in the footer */
     font-weight: bold;
 }
 
-.social-media a {
-    text-decoration: none;
-    color: #fff; /* Set social media icon color */
-    font-size: 20px; /* Define font size for social media icons */
-    margin: 0 10px;
-}
+.footer__footer-menu{
 
-.copyright {
-    margin-top: 20px;
-    font-size: 14px; /* Define font size for copyright text */
-    max-width: 50%;
-    margin: 20px auto;
 }
 
 /* Scroll up */
-#scrollToTopBtn {
+.scroll-to-top-button {
     display: none; /* Initially hide the scroll-to-top button */
     position: fixed;
     bottom: 20px;
@@ -425,11 +478,11 @@ textarea {
     transition: opacity 0.3s; /* Add a transition effect for opacity */
 }
 
-#scrollToTopBtn:hover {
+.scroll-to-top-button:hover {
     background-color: #0b3522; 
 }
 
-#scrollToTopBtn .fa-circle-up{
+.scroll-to-top-button .fa-circle-up{
     font-size: 27px; 
 }
 
@@ -462,43 +515,6 @@ textarea {
         line-height: 1.5;
         margin-bottom: 15px; 
     }
-    .nav-item .button{
-        display: none;
-    }
-
-    /* The menu changes for mobile */
-    .main_menu {
-        display: none; /* Initially hide the main menu */
-        position: fixed;
-        top: 129px;
-        padding: 0;
-        text-align: center;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fff; /* Set the background color for the mobile menu */
-        border-top: 1px solid #ebebeb; /* Add a top border to the mobile menu */
-        z-index: 1111111; /* Set the stacking order for the mobile menu */
-    }
-
-    .main_menu li {
-        padding: 20px; /* Adjust padding for menu items on smaller screens */
-        border-bottom: 1px solid #ebebeb; /* Add a bottom border to menu items */
-        width: 100%;
-        display: block;
-    }
-
-    .mobile_menu {
-        display: block; /* Show the mobile menu icon */
-    }
-
-    .full_width_container--content {
-        margin: 0; /* Remove margin for content within the full-width container */
-    }
-
-    .full_width_container {
-        padding: 2em; /* Adjust padding for the full-width container on screens up to 768px width */
-    }
 
     .row {
         -webkit-box-orient: vertical;
@@ -511,6 +527,56 @@ textarea {
         width: 100%;
         padding: 10px; /* Adjust padding for columns on smaller screens */
     }
+
+    .header__primary-logo{
+        max-width: 50px;
+    }
+
+    .header__content{
+        padding: 0px 20px;
+    }
+
+    /* The menu changes for mobile */
+    .header__navigation {
+        display: none; /* Initially hide the main menu */
+        position: fixed;
+        top: 74px;
+        padding: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f0f0f0f7; /* Set the background color for the mobile menu */
+        border-top: 1px solid #ebebeb; /* Add a top border to the mobile menu */
+        z-index: 1111111; /* Set the stacking order for the mobile menu */
+    }
+
+    .header__navigation ul {
+        padding: 20px; /* Adjust padding for menu items on smaller screens */
+        border-bottom: 1px solid #ebebeb; /* Add a bottom border to menu items */
+        width: 100%;
+    }
+
+    .header__navigation ul li{
+        display: inline-block;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .header__navigation .button{
+        margin: 0px;
+    }
+
+    .header__mobile-menu {
+        display: block; /* Show the mobile menu icon */
+    }
+
+    .full_width_container--content {
+        margin: 0; /* Remove margin for content within the full-width container */
+    }
+
+    .full_width_container {
+        padding: 2em; /* Adjust padding for the full-width container on screens up to 768px width */
+    }
+
 }
 
 @media screen and (max-width: 360px) {
