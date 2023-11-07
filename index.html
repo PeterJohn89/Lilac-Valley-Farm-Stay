@@ -12,10 +12,16 @@
     <!--The favicon is the small icon on your broswers tab-->
     <link rel="icon" type="image/png" href="./assets/images/favicon-32x32.png" sizes="32x32">
     <title>Lilac Valley Farm Stay</title>
-    <!-- External Stylesheets and Scripts -->
+    <!-- External Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
 </head>
@@ -54,7 +60,7 @@
             <!--Written content in full width image-->
             <div class="hero_banner__content">
                 <h1>Lilac Valley Farm Stay, where rustic elegance meets the serene beauty</h1>
-                <a href="#about" class="button secondary">Learn more <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="#about" class="button primary">Learn more <i class="fa-solid fa-chevron-right"></i></a>
             </div>
         </div>
     </section>
@@ -68,8 +74,8 @@
                     <div class="featured_content_tile">
                         <span>7-day duration</span>
                         <h4>Cozy Retreat</h4>
-                        <p>Indulge in a relaxing getaway with our cozy retreat package. Enjoy comfortable accommodations and a delicious breakfast each morning. Explore the farm and take in the stunning views of the Blue Mountains.</p>
-                        <a href="#booking" class="button primary hallow">Book your stay</a>
+                        <p>Indulge in a relaxing getaway with our cozy retreat package. Enjoy comfortable accommodations and a delicious breakfast each morning. Explore the farm in the stunning views of the Blue Mountains.</p>
+                        <a href="#booking" class="button primary">Book your stay</a>
                     </div>
                 </div>
                 <div class="coln-6">
@@ -78,18 +84,77 @@
                         <span>3-day duration</span>
                         <h4>Rural Escape</h4>
                         <p>Experience the charm of rural living with our rural escape package. Enjoy a long weekend in our luxurious barn house, where comfort meets nature. Breakfast is included.</p>
-                        <a href="#booking" class="button primary hallow">Book your stay</a>
+                        <a href="#booking" class="button primary">Book your stay</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    
+    <!--About Us Section-->
+    <section class="about-us" id="about">
+        <div class="main_wrapper">
+            <div class="row">
+                <div class="coln-6">
+                    <img src="./assets/images/relaxing-couples-002.jpg" alt="">
+                </div>
+                <div class="coln-6">
+                    <div class="featured_content_tile transparent">
+                        <h3>About us</h3>
+                        <p>Welcome to Lilac Valley Farm Stay, where rustic elegance meets natural serenity. Our story begins with a dream and a vision, brought to life by Marina Ye, a passionate local interior designer. Three years ago, Marina took a leap of faith and acquired an old, run-down barn nestled in the tranquil hills of the Blue Mountains. Her plan was ambitious: to transform this weathered structure into a luxurious open-plan barn house that would offer a unique escape for those seeking a perfect blend of comfort and nature.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--FAQ-->
+    <section>
+        <div class="main_wrapper">
+            <h3>Would you like to know more?</h3>
+            <div class="row">
+                <div class="coln-6">
+                    <div id="accordion">
+                        <h3>What is Lilac Valley Farm Stay?</h3>
+                        <div>
+                            <p>Lilac Valley Farm Stay is a rustic farm stay accommodation located in the Blue Mountains. It features a beautifully restored barn house on a four-acre property, home to sheep, chickens, ducks, and a friendly goat named Rosie.</p>
+                        </div>
+                        <h3>Who is the owner of Lilac Valley Farm Stay?</h3>
+                        <div>
+                            <p>The property is owned by Marina Ye, a local interior designer who purchased the old rundown barn and renovated it to its current luxurious state.</p>
+                        </div>
+                        <h3>What amenities are available at Lilac Valley Farm Stay?</h3>
+                        <div>
+                            <p>The property offers an outdoor plunge pool, stunning cottage garden, and a relaxing atmosphere in a beautiful location in the Blue Mountains.</p>
+                        </div>
+                        <h3>How can I book a stay at Lilac Valley Farm Stay?</h3>
+                        <div>
+                            <p>You can book a stay at Lilac Valley Farm Stay through our website or contact us directly for availability and reservations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="coln-6">
+                    <h4>Our features</h4>
+                    <ul class="checklist">
+                        <li><i class="fa-solid fa-check"></i> Air conditioning</li>
+                        <li><i class="fa-solid fa-check"></i> Queen size bed</li>
+                        <li><i class="fa-solid fa-check"></i> Fire</li>
+                        <li><i class="fa-solid fa-check"></i> Heating</li>
+                        <li><i class="fa-solid fa-check"></i> Kitchen</li>
+                        <li><i class="fa-solid fa-check"></i> Lots of fun</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!--Reviews Section-->
     <section>
         <div class="main_wrapper">
             <div class="brief_description">
-                <h2>What people think about us</h2>
+                <h3>What people think about us</h3>
             </div>
             <div class="row">
                 <!-- Review 1 -->
@@ -137,26 +202,51 @@
             </div>
         </div>
     </section>
-
-    <!--About Us Section-->
-    <section class="about-us" id="about">
-        <div class="full_width_container" style="background-image: url('./assets/images/background001.jpg');">
-            <div class="main_wrapper">
-                <div class="full_width_container__content">
+     
+    <!-- Slider Section -->
+    <section id="slider">
+        <!-- Slide 1 -->
+        <div style="background-image: url('./assets/images/slider001.jpg');">
+            <div class="full_width_container__content">
+                <div class="main_wrapper">
                     <div class="content_overlay">
-                        <h2>About us</h2>
-                        <p>Welcome to Lilac Valley Farm Stay, where rustic elegance meets natural serenity. Our story begins with a dream and a vision, brought to life by Marina Ye, a passionate local interior designer. Three years ago, Marina took a leap of faith and acquired an old, run-down barn nestled in the tranquil hills of the Blue Mountains. Her plan was ambitious: to transform this weathered structure into a luxurious open-plan barn house that would offer a unique escape for those seeking a perfect blend of comfort and nature.</p>
-                        <p>Our mission is simple yet profound: to provide a haven where guests can immerse themselves in the beauty of the Blue Mountains, experience the unique charm of farm life, and savor a tranquil escape from the hustle and bustle of city living. Lilac Valley Farm Stay is more than just a place to stay; it's an invitation to create lasting memories, to reconnect with nature, and to discover the magic of rustic elegance.</p>
+                        <h3>Immerse in Nature</h3>
+                        <p>Discover the serenity of the Blue Mountains as you immerse yourself in nature at Lilac Valley Farm Stay. The property is nestled within breathtaking landscapes, providing a tranquil escape from the hustle and bustle of city life.</p>
+                        <a href="#booking" class="button secondary">Book your stay <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div style="background-image: url('./assets/images/slider002.jpg');">
+            <div class="full_width_container__content">
+                <div class="main_wrapper">
+                    <div class="content_overlay">
+                        <h3>Our Garden:</h3>
+                        <p>Explore our enchanting cottage garden, a symphony of color and fragrance that invites you to unwind in the lap of nature's beauty. The garden is a masterpiece crafted with care, housing a myriad of vibrant flowers, aromatic herbs, and whimsical pathways.</p>
+                        <a href="#about" class="button secondary">learn more <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div style="background-image: url('./assets/images/slider003.jpg');">
+            <div class="full_width_container__content">
+                <div class="main_wrapper">
+                    <div class="content_overlay">
+                        <h3>Farm Life</h3>
+                        <p>At Lilac Valley Farm Stay, farm life isn't just a notion; it's an immersive experience. Stroll through our four acres of land and connect with the gentle souls of the farm – the sheep, chickens, ducks, and the ever-friendly goat, Rosie.</p>
+                        <a href="#contact" class="button secondary">Contact us</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        
+
     <!-- Bookings Section -->
     <section id="booking">
         <div class="main_wrapper">
-            <h2>Book now</h2>
+            <h3>Book now</h3>
             <form action="#" method="post" class="form">
                 <div class="row">
                     <div class="coln-6">
@@ -193,46 +283,6 @@
         </div>
     </section>
 
-    <!-- Slider Section -->
-    <section id="slider">
-        <!-- Slide 1 -->
-        <div style="background-image: url('./assets/images/slider001.jpg');">
-            <div class="full_width_container__content">
-                <div class="main_wrapper">
-                    <div class="content_overlay">
-                        <h2>Immerse in Nature</h2>
-                        <p>Discover the serenity of the Blue Mountains as you immerse yourself in nature at Lilac Valley Farm Stay. The property is nestled within breathtaking landscapes, providing a tranquil escape from the hustle and bustle of city life.</p>
-                        <a href="#booking" class="button secondary">Book your stay <i class="fa-solid fa-chevron-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Slide 2 -->
-        <div style="background-image: url('./assets/images/slider002.jpg');">
-            <div class="full_width_container__content">
-                <div class="main_wrapper">
-                    <div class="content_overlay">
-                        <h2>Our Garden:</h2>
-                        <p>Explore our enchanting cottage garden, a symphony of color and fragrance that invites you to unwind in the lap of nature's beauty. The garden is a masterpiece crafted with care, housing a myriad of vibrant flowers, aromatic herbs, and whimsical pathways.</p>
-                        <a href="#about" class="button secondary">learn more <i class="fa-solid fa-chevron-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Slide 3 -->
-        <div style="background-image: url('./assets/images/slider003.jpg');">
-            <div class="full_width_container__content">
-                <div class="main_wrapper">
-                    <div class="content_overlay">
-                        <h2>Farm Life</h2>
-                        <p>At Lilac Valley Farm Stay, farm life isn't just a notion; it's an immersive experience. Stroll through our four acres of land and connect with the gentle souls of the farm – the sheep, chickens, ducks, and the ever-friendly goat, Rosie.</p>
-                        <a href="#contact" class="button secondary">Contact us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
    <!-- Meet Rosie Section -->
     <section>
         <div class="main_wrapper">
@@ -243,12 +293,10 @@
                         <img src="./assets/images/Rosie.jpg" alt="A white goat named Rosie">
                     </div>
                     <div class="coln-6">
-                        <div class="featured_content_tile">
-                            <!-- Introducing Rosie -->
-                            <h4>Meet Rosie, our special farm friend.</h4>
-                            <!-- Description -->
-                            <p>At Lilac Valley Farm Stay, there's one resident who has a special place in our hearts, and her name is Rosie. Rosie is not your typical farm animal; she's a charismatic and friendly goat who has become an endearing member of our farm family. Her warm personality and inquisitive nature make her a favorite among our guests.</p>
-                        </div>
+                        <!-- Introducing Rosie -->
+                        <h4>Meet Rosie, our special farm friend.</h4>
+                        <!-- Description -->
+                        <p>At Lilac Valley Farm Stay, there's one resident who has a special place in our hearts, and her name is Rosie. Rosie is not your typical farm animal; she's a charismatic and friendly goat who has become an endearing member of our farm family. Her warm personality and inquisitive nature make her a favorite among our guests.</p>
                     </div>
                 </div>
             </div>
@@ -261,7 +309,7 @@
         <div class="main_wrapper">
             <!-- Brief description of the gallery -->
             <div class="brief_description">
-                <h2>Gallery</h2>
+                <h3>Gallery</h3>
                 <p>These snapshots are a testament to the unforgettable experiences that await you at Lilac Valley Farm Stay. We invite you to browse our gallery and envision the romantic escape that could be yours, where love and nature intertwine in perfect harmony.</p>
             </div>
             <div id="carousel">
@@ -294,10 +342,31 @@
         </div>
     </section>
 
+    <!-- Subscribe Section -->
+    <section>
+        <div class="full_width_container" style="background-image: url('./assets/images/Barn004.jpg');">
+            <div class="main_wrapper">
+                <div class="full_width_container__content">
+                    <div class="content_overlay">
+                        <!-- Title and description for the subscribe section -->
+                        <h3>Subscribe</h3>
+                        <p>When it comes to a truly exceptional escape, Lilac Valley Farm Stay offers an unparalleled experience. Our deluxe accommodation is designed to cater to those who appreciate the finer things in life. Here's why our farm stay is the perfect choice for your next getaway.</p>
+                        <div class="subscribe__email-subscribe">
+                            <!-- Email input field and subscribe button -->
+                            <input type="email" placeholder="Enter your email" class="subscribe__input">
+                            <button class="subscribe__button button secondary">Subscribe <i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
     <!-- Contact Us Section -->
     <section id="contact">
         <div class="main_wrapper">
-            <h2>Contact Us</h2>
+            <h3>Contact Us</h3>
             <!-- Contact details including email, location, and phone -->
             <div>
                 <p><i class="fa-regular fa-envelope"></i> <a href="lilacvalleystay@example.com">lilacvalleystay@example.com</a></p>
@@ -321,26 +390,6 @@
                 <!-- Submit button for the contact form -->
                 <button class="button primary" type="submit">Submit <i class="fa-solid fa-chevron-right"></i></button>
             </form>
-        </div>
-    </section>
-
-    <!-- Subscribe Section -->
-    <section class="subscribe">
-        <div class="full_width_container" style="background-image: url('./assets/images/Barn004.jpg');">
-            <div class="main_wrapper">
-                <div class="full_width_container__content">
-                    <div class="content_overlay">
-                        <!-- Title and description for the subscribe section -->
-                        <h2>Subscribe</h2>
-                        <p>When it comes to a truly exceptional escape, Lilac Valley Farm Stay offers an unparalleled experience. Our deluxe accommodation is designed to cater to those who appreciate the finer things in life. Here's why our farm stay is the perfect choice for your next getaway.</p>
-                        <div class="subscribe__email-subscribe">
-                            <!-- Email input field and subscribe button -->
-                            <input type="email" placeholder="Enter your email" class="subscribe__input">
-                            <button class="subscribe__button button secondary">Subscribe <i class="fa-solid fa-chevron-right"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 

@@ -48,8 +48,7 @@ $(window).on("scroll", function(){
     }
 });
 
-
-    
+$("#accordion").accordion();
 
 $(window).on("scroll", function(){
     const windowWidth = $(window).width(); // Get window width

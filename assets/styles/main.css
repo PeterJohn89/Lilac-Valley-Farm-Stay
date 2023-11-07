@@ -4,8 +4,6 @@
 */
 
 /* This section imports fonts from Google Fonts and defines variables for reusability. */
-
-
 @font-face {
     font-family: 'Roboto-Medium';
     src: url('../font/Roboto-Medium.ttf') format('truetype');
@@ -81,6 +79,7 @@ p {
 
 img{
     width: 100%;
+    display: block;
 }
 
 section {
@@ -232,22 +231,17 @@ textarea:focus {
 }
 
 .content_overlay {
-    background-color: rgba(51, 51, 51, 0.61); /* Use rgba for transparency */
+    background-color: #ccccccc8; /* Use rgba for transparency */
     padding: 20px;
     width: 100%;
     max-width: 80%;
-    color: #fff;
     border-radius: 6px; /* Add border-radius for rounded corners */
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
-    -webkit-transition: background-color 0.3s ease;
-    -o-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
-.content_overlay:hover {
-    background-color: rgba(51, 51, 51, 0.8); /* Darker overlay on hover */
+.transparent{
+    background-color: transparent !important; /* this important overwrites all other styles using this background color */
 }
+
 
 /* Header */
 header {
@@ -325,6 +319,44 @@ header {
     color: #fff;
 }
 
+#accordion .ui-accordion-header.ui-state-active{
+    background-color: #333333;
+}
+
+#accordion .ui-accordion-header{
+    background: #ffffff;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: #ccc;
+}
+
+#accordion .ui-widget-content{
+    border: 0px;
+}
+
+.about-us{
+    background-color: #f9f9f9;
+}
+
+.checklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    list-style: none;
+    padding: 20px;
+}
+
+.checklist li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.checklist i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
 .full_width_container {
     background-position: center; /* Make background image centered */
     background-size: cover; /* Make background image cover the entire container */
@@ -339,6 +371,7 @@ header {
 /* Featured tiles */
 .featured_content_tile {
     padding: 20px; /* Define padding for featured content tiles */
+    background-color: #ffffff;
 }
 
 /* Carousel */
@@ -347,9 +380,6 @@ header {
 }
 
 /* Email subscribe */
-.subscribe{
-    margin-bottom: 0px;
-}
 
 .subscribe__email-subscribe{
     display: -webkit-box; /* Used for safari browsers */
@@ -493,7 +523,7 @@ header {
     }
     /* Adjusting the logo size for mobile */
     .header__primary-logo{
-        max-width: 50px;
+        max-width: 60px;
     }
 
     .header__content{
@@ -506,7 +536,7 @@ header {
     .header__navigation {
         display: none; /* Initially hide the main menu */
         position: fixed;
-        top: 94px;
+        top: 100px;
         padding: 0;
         left: 0;
         width: 100%;
