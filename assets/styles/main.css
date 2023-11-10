@@ -615,4 +615,12 @@ header {
         margin: 0px;
     }
 
+    .button{
+        padding: 15px 20px; 
+    }
+
+    .subscribe__email-subscribe span{
+        display: none;
+    }
+
 }
